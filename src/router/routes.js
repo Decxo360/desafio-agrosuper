@@ -5,6 +5,7 @@ import Cerdo from '../components/Pages/Cerdo.vue'
 import Editor from '../components/Pages/Editor.vue'
 import Pavo from '../components/Pages/Pavo.vue'
 import Pollo from '../components/Pages/Pollo.vue'
+import Variaciones from '../components/Pages/Variaciones.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes =[
@@ -13,9 +14,10 @@ const routes =[
         component:Home, 
         redirect:'General',      
         children:[
-            {path:'General',component:General},
+            {path:'General',component:General, name:"General Carnes"},
+            {path:'Variaciones',component:Variaciones, name:"General Variaciones"},
             {path:'Cerdo',component:Cerdo},
-            {path:'Editor',component:Editor},
+            {path:'Editor',component:Editor,name:'Editor Semanal'},
             {path:'Pavo',component:Pavo},
             {path:'Pollo',component:Pollo},
         ],
