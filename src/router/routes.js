@@ -7,6 +7,7 @@ import Pavo from '../components/Pages/Pavo.vue'
 import Pollo from '../components/Pages/Pollo.vue'
 import Variaciones from '../components/Pages/Variaciones.vue'
 import Variable from '../components/Pages/Variable.vue'
+import Perfil from '../components/Pages/Perfil.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes =[
@@ -30,6 +31,7 @@ const routes =[
             {path:'Cerdo',component:Cerdo,name:"Cerdo"},
             {path:'Pavo',component:Pavo,name:"Pavo"},
             {path:'Pollo',component:Pollo,name:"Pollo"},
+            {path:'Perfil',component:Perfil,name:"Perfil"},
         ],
 
     },
