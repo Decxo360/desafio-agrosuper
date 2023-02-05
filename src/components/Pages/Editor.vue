@@ -81,7 +81,8 @@ export default {
                 }else{
                     count = count - 1
                 }
-                if (count == 5) {
+                lastIndex = index
+                if (count >= 4) {
                     this.isDisabled = false
                 }else{
                     this.isDisabled = true
