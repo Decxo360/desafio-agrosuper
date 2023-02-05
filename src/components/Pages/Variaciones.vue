@@ -1,6 +1,9 @@
-import axios from 'axios';
 <template>
-    <div>
+    <div style="margin-top: 30px;">
+        <ul class="opciones">
+                <li><router-link class="item" to="General">General</router-link></li>
+                <li><router-link class="item" to="Variaciones">Variaciones</router-link></li>
+        </ul>
         <table v-if="tabla !== null">
             <tr>
                 <th>Sector</th>
@@ -73,5 +76,36 @@ th, td {
 th {
   background-color: #f2f2f2;
   font-weight: bold;
+}
+.opciones {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+.opciones li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+    width: 200px;
+    height: 50px;
+    text-decoration: none;
+}
+
+.opciones li:hover {
+    background-color: rgb(79, 86, 92);
+    cursor: pointer;
+
+}
+.router-link-active {
+    color: rgb(211, 148, 11) !important;
+    text-decoration: none;
+}
+.item {
+    text-decoration: none;
+    color: black;
 }
 </style>
