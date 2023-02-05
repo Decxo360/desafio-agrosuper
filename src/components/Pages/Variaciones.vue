@@ -16,15 +16,12 @@ import axios from 'axios';
             </tr>
         </table>
         <div>
-            <textarea cols="100" rows="10" style="overflow-y: scroll; margin-top: 30px; resize: none;">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. At eligendi magnam distinctio non quam rerum quisquam omnis quod voluptatem quidem? Hic similique alias odit quo quidem maiores ullam corporis cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, esse? Quibusdam, esse placeat nostrum natus vitae nulla sequi, dolorem amet quidem quia iste? Rem consectetur tempora animi iusto placeat magni.
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, ratione tenetur. Ut ea veniam vel velit, magnam minima, voluptatem eaque omnis excepturi assumenda dignissimos? Facilis quod quas odit non aliquam.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur accusantium voluptates a maxime, facere delectus sit nemo veritatis sequi aperiam iste aliquid dolorem quasi consequatur, ullam ipsam corporis dignissimos molestiae.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore ad aliquam molestiae voluptatem sit quisquam exercitationem voluptate distinctio facilis laborum atque a cum vero nesciunt inventore, aliquid tempora veniam maiores.
+            <textarea cols="100" rows="10" style="overflow-y: scroll; margin-top: 30px; resize: none;" v-model="explicacion">
+
             </textarea>
         </div>
         <div style="display: flex; justify-content: center;">
-            <button>Guardar</button>
+            <button @click="guardarRespuesta">Guardar</button>
         </div>
     </div>
 </template>
@@ -34,7 +31,8 @@ export default {
     data() {
         let tabla = null;
         return {
-            tabla
+            tabla,
+            explicacion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. At eligendi magnam distinctio non quam rerum quisquam omnis quod voluptatem quidem? Hic similique alias odit quo quidem maiores ullam corporis cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, esse? Quibusdam, esse placeat nostrum natus vitae nulla sequi, dolorem amet quidem quia iste? Rem consectetur tempora animi iusto placeat magni.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, ratione tenetur. Ut ea veniam vel velit, magnam minima, voluptatem eaque omnis excepturi assumenda dignissimos? Facilis quod quas odit non aliquam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur accusantium voluptates a maxime, facere delectus sit nemo veritatis sequi aperiam iste aliquid dolorem quasi consequatur, ullam ipsam corporis dignissimos molestiae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore ad aliquam molestiae voluptatem sit quisquam exercitationem voluptate distinctio facilis laborum atque a cum vero nesciunt inventore, aliquid tempora veniam maiores."
         }
     },
     methods: {
@@ -50,6 +48,9 @@ export default {
                 }
             }).then((res)=>{return res.data})
             this.tabla = response.data
+        },
+        guardarRespuesta(){
+            localStorage.setItem("explicacion",this.explicacion)
         }
     },
     beforeMount() {
