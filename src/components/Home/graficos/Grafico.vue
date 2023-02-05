@@ -1,7 +1,5 @@
-
-
 <template lang="">
-    <div>
+    <div style="width:40%">
         <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
     </div>
 </template>
@@ -40,9 +38,16 @@ export default {
                     name: "proyectado",
                     data: this.comparacion1?.map((proyectado, index) => {
                         index = index + 1
-                        return {
-                            x: index + this.comparacion2.length,
-                            y: proyectado.resultado_USDM
+                        if (this.moneda == "USDM") {
+                            return {
+                                x: index + this.comparacion2.length,
+                                y: proyectado.resultado_USDM
+                            }
+                        }else{
+                            return {
+                                x: index + this.comparacion2.length,
+                                y: proyectado.resultado_USD_TON
+                            }
                         }
                     })
                 },
@@ -50,9 +55,16 @@ export default {
                     name: "real",
                     data: this.comparacion2?.map((real, index) => {
                         index = index + 1
-                        return {
-                            x: index,
-                            y: real.resultado_USDM
+                        if (this.moneda == "USDM") {
+                            return {
+                                x: index,
+                                y: real.resultado_USDM
+                            }
+                        } else {
+                            return {
+                                x: index,
+                                y: real.resultado_USD_TON
+                            }
                         }
                     })
                 },
@@ -84,7 +96,5 @@ export default {
 }
 </script>
 <style scoped>
-div {
-    width: 60%;
-}
+
 </style>
