@@ -1,15 +1,17 @@
 <template lang="">
-    <div class="container">
-        <h1>Login</h1>
-        <div class="item-centrado">
-            <form action="" class="item-centrado">
-                <label for="">Usuario</label>
-                <input v-model="usuario" type="text" name="" id="">
-                <label for="">Pass</label>
-                <input v-model="pass" type="password">
-            </form>
-            <span v-if="itsOk == false" class="error">{{errorMessage}}</span>
-            <button @click="login">Logearse</button>
+    <div style="display:flex; justify-content:center; align-items:center; width:100%;">
+        <div class="container">
+            <h1>Login</h1>
+            <div class="item-centrado">
+                <form action="" class="item-centrado">
+                    <label for="">Usuario</label>
+                    <input v-model="usuario" type="text" name="" id="">
+                    <label for="">Pass</label>
+                    <input v-model="pass" type="password">
+                </form>
+                <span v-if="itsOk == false" class="error">{{errorMessage}}</span>
+                <button @click="login">Logearse</button>
+            </div>
         </div>
     </div>
 </template>
@@ -30,7 +32,6 @@ export default {
                 localStorage.setItem("usuario",this.usuario)
                 localStorage.setItem("pass",this.pass)
                 localStorage.setItem("isLogged", true)
-                console.log("verdadero");
                 this.$router.push({path:'/'})                
             }else{
                 console.log("falso");
@@ -48,7 +49,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100vh;
+        width: 50%;
         color: black;
         background-color: rgb(132, 126, 119);
         border-radius: 10px 10px 10px 10px;
