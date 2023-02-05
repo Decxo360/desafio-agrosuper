@@ -33,5 +33,5 @@ la correspondiente modificación de variables.", por lo cuál entendí que era o
 
 Por lo demás, todo realizado, como se ha indicado. 
 
-
+link de netlify para ver el proyecto: https://desafio-agrosuper.netlify.app/#/General
 
