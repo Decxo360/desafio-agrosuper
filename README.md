@@ -5,11 +5,17 @@ Muy buenas esperando que se encuentren bien todos les iré indicando que libreri
 Los paquetes utilizados en este proyecto fueron:
 
 Axios --> consultas https
+
 Vue3-apexcharts --> gráficos
+
 apexcharts --> gráficos
+
 Vue 
+
 Css vanilla
+
 vue-router --> rutificador 
+
 vite
 
 En este proyecto se utilizo yarn para crear el proyecto. Al clonar el repositorio utilizar:
