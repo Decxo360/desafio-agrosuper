@@ -6,6 +6,7 @@ import Editor from '../components/Pages/Editor.vue'
 import Pavo from '../components/Pages/Pavo.vue'
 import Pollo from '../components/Pages/Pollo.vue'
 import Variaciones from '../components/Pages/Variaciones.vue'
+import Variable from '../components/Pages/Variable.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes =[
@@ -13,18 +14,37 @@ const routes =[
         path:'/',
         component:Home, 
         redirect:'General',      
+        beforeEnter: (to, from, next) => {
+            let isLogged = JSON.parse(localStorage.getItem("isLogged"))
+            if( isLogged!==true){
+                next({path:'/Login'})
+            }else{
+                next()
+            }
+        },
         children:[
             {path:'General',component:General, name:"General Carnes"},
             {path:'Variaciones',component:Variaciones, name:"General Variaciones"},
-            {path:'Cerdo',component:Cerdo},
             {path:'Editor',component:Editor,name:'Editor Semanal'},
-            {path:'Pavo',component:Pavo},
-            {path:'Pollo',component:Pollo},
+            {path:'Variable1',component:Variable,name:'Variable'},
+            {path:'Cerdo',component:Cerdo,name:"Cerdo"},
+            {path:'Pavo',component:Pavo,name:"Pavo"},
+            {path:'Pollo',component:Pollo,name:"Pollo"},
         ],
 
     },
     {
         path:'/Login', 
+        beforeEnter: (to, from, next) => {
+            beforeEnter: (to, from, next) => {
+                let isLogged = JSON.parse(localStorage.getItem("isLogged"))
+                if( isLogged==true){
+                    next({path:'/'})
+                }else{
+                    next()
+                }
+            },
+        },
         component:Login,
     },
     // {path:'/valoraciones'},
