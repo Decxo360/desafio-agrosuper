@@ -10,44 +10,42 @@ import Variable from '../components/Pages/Variable.vue'
 import Perfil from '../components/Pages/Perfil.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-const routes =[
+const routes = [
     {
-        path:'/',
-        component:Home, 
-        redirect:'General',      
+        path: '/',
+        component: Home,
+        redirect: 'General',
         beforeEnter: (to, from, next) => {
             let isLogged = JSON.parse(localStorage.getItem("isLogged"))
-            if( isLogged!==true){
-                next({path:'/Login'})
-            }else{
+            if (isLogged !== true) {
+                next({ path: '/Login' })
+            } else {
                 next()
             }
         },
-        children:[
-            {path:'General',component:General, name:"General Carnes"},
-            {path:'Variaciones',component:Variaciones, name:"General Variaciones"},
-            {path:'Editor',component:Editor,name:'Editor Semanal'},
-            {path:'Variable1',component:Variable,name:'Variable'},
-            {path:'Cerdo',component:Cerdo,name:"Cerdo"},
-            {path:'Pavo',component:Pavo,name:"Pavo"},
-            {path:'Pollo',component:Pollo,name:"Pollo"},
-            {path:'Perfil',component:Perfil,name:"Perfil"},
+        children: [
+            { path: 'General', component: General, name: "General Carnes" },
+            { path: 'Variaciones', component: Variaciones, name: "General Variaciones" },
+            { path: 'Editor', component: Editor, name: 'Editor Semanal' },
+            { path: 'Variable1', component: Variable, name: 'Variable' },
+            { path: 'Cerdo', component: Cerdo, name: "Cerdo" },
+            { path: 'Pavo', component: Pavo, name: "Pavo" },
+            { path: 'Pollo', component: Pollo, name: "Pollo" },
+            { path: 'Perfil', component: Perfil, name: "Perfil" },
         ],
 
     },
     {
-        path:'/Login', 
+        path: '/Login',
         beforeEnter: (to, from, next) => {
-            beforeEnter: (to, from, next) => {
-                let isLogged = JSON.parse(localStorage.getItem("isLogged"))
-                if( isLogged==true){
-                    next({path:'/'})
-                }else{
-                    next()
-                }
-            },
+            let isLogged = JSON.parse(localStorage.getItem("isLogged"))
+            if (isLogged == true) {
+                next({ path: '/' })
+            } else {
+                next()
+            }
         },
-        component:Login,
+        component: Login,
     },
     // {path:'/valoraciones'},
     // {path:'/editor'},
