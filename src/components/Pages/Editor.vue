@@ -81,8 +81,7 @@ export default {
                 }else{
                     count = count - 1
                 }
-                lastIndex = index
-                if (count >= 4) {
+                if (count >= this.checkbox.length) {
                     this.isDisabled = false
                 }else{
                     this.isDisabled = true
