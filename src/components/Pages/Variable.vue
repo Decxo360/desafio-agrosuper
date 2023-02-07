@@ -84,7 +84,7 @@ export default {
         async getEditorVariables(){
             let response = await axios({
                 method:"post",
-                url:'http://f11.cl:8090/editorVariables',
+                url:'https://f11.cl:8090/editorVariables',
                 data:{
                     auth:{
                         username:"devsafio",
@@ -107,7 +107,7 @@ export default {
         async probarVariable(){
             let response = await axios({
                 method:'post',
-                url:'http://f11.cl:8090/probarVariable',
+                url:'https://f11.cl:8090/probarVariable',
                 data:{
                     auth:{
                         username:"devsafio",

@@ -90,7 +90,7 @@ export default {
         async getData() {
             let response = await axios({
                 method: 'post',
-                url: 'http://f11.cl:8090/getCarnesRealProyeccion',
+                url: 'https://f11.cl:8090/getCarnesRealProyeccion',
                 data: {
                     auth: {
                         username: "devsafio",

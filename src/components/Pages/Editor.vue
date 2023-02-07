@@ -54,7 +54,7 @@ export default {
         async getEditorSemanal(){
             let response = await axios({
                 method:'post',
-                url:'http://f11.cl:8090/editorSemanal',
+                url:'https://f11.cl:8090/editorSemanal',
                 data:{
                     auth:{
                         username:"devsafio",
