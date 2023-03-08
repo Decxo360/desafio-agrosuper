@@ -42,7 +42,7 @@ export default {
         async getDataVariaciones(){
             let response = await axios({
                 method:"POST",
-                url:"http://f11.cl:8090/obtenerVariaciones",
+                url:"https://f11.cl:8090/obtenerVariaciones",
                 data:{
                     auth:{
                         username:"devsafio",
